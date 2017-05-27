@@ -1,12 +1,12 @@
-public class ClassRoom {
+public class ClassRoom extends Tile{
 	
-	private int classNumber;
-	private int x; //parallel to millburn ave
-	private int y; //perp to millburn ave
+	protected int classNumber;
 	
 	public ClassRoom(int classNumber){
 		this.classNumber = classNumber;
-		
+		isOccupied = true;
 	}
+	
+	
 	
 }
