@@ -31,6 +31,12 @@ HallExit2 1
 Stairs1 1
 108 1
 new
+108
+106 1
+107 0
+109 1
+110 1
+new
 107
 106 1
 108 1
@@ -64,6 +70,12 @@ new
 110 1
 109 1 
 new
+Bathroom
+113 1
+112 1
+114 1
+116 1
+new
 113
 111 1
 112 1
@@ -75,9 +87,18 @@ Bathroom 1
 MainOffice 1
 Stairs2 0
 new
+Stairs2
+113 1
+Bathroom 1
+MainEntrance 1
+MainOffice 1
+new
 MainOffice
 MainEntrance 1
 Gym 4
+new
+Gym
+MainOffice 4
 new
 114
 116 1
@@ -94,13 +115,14 @@ new
 116 1
 114 1
 new
-118 
+118
 117 1
 119 1
 116 1
 114 1
+120 1
 new
-119 
+119
 117 1
 118 1
 120 1
@@ -185,7 +207,7 @@ new
 130 1
 Bathroom2 1
 new
-130 
+130
 129 1
 Bathroom2 1
 132 1
@@ -286,7 +308,6 @@ new
 174
 172 1
 173a 1
-176a 1
 175 1
 new
 176
@@ -300,6 +321,11 @@ new
 176 1
 Stairs7 1
 174 1
+new
+Stairs7
+175 1
+173a 1
+176 1
 new
 139
 HallExit1 1

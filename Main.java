@@ -17,7 +17,7 @@ public class Main{
 		createMap();
 
 		
-
+		findPath(classRooms.get("109"), classRooms.get("139"));
 
 	}
 	
@@ -60,6 +60,7 @@ public class Main{
 			Boolean breakOuter = false;
 
 			HashMap<ClassRoom, Integer> distances = new HashMap<ClassRoom, Integer>();
+			ArrayList<ClassRoom> classrooms = new ArrayList<ClassRoom>();
 
 			while(true){
 				String nextLine = newSc.nextLine();
@@ -70,9 +71,20 @@ public class Main{
 					break;
 				}else{
 					String[] line = nextLine.split(" ");
+					// System.out.println(line[0]);
 					distances.put(classRooms.get(line[0]), Integer.parseInt(line[1]));
+					classrooms.add(classRooms.get(line[0]));
+					if (classRooms.get(line[0]) == null){
+						System.out.println(line[0]);
+					}
 				}
 			}
+
+			for (ClassRoom i : classrooms){
+				// System.out.println(i);
+			}
+
+			classRooms.get(title).setNextToList(classrooms);
 			classRooms.get(title).setNextTo(distances);
 			if(breakOuter) break;
 
@@ -82,15 +94,64 @@ public class Main{
 
 	public static Path findPath(ClassRoom start, ClassRoom finish){
 		resetNodes(start);
-		Set<ClassRoom> keys = start.getNextTo().keySet();
-		ClassRoom[] array = keys.toArray(new ClassRoom[keys.size()]);
+
+		start.setDidCheck(true);
 		
-		for(int i = 0; i < array.length; i++){
-			if (!array[i].getDidCheck()) {
-				array[i].setDistanceToStart(start.getNextTo().get(array[i]));
-				array[i].setdidCheck(true);
-			}
+		ArrayList<ClassRoom> pending = new ArrayList<ClassRoom>();
+		ArrayList<ClassRoom> nextToArrStart = start.getNextToList();
+
+		for (ClassRoom i : nextToArrStart){
+			i.setDistanceToStart(start.getNextTo().get(i));
+			pending.add(i);
 		}
+
+		while(true){
+			ClassRoom thisRoom;
+			int smallestDist = Integer.MAX_VALUE;
+			for(ClassRoom i : pending){
+				if (i.getDistanceFromStart() < smallestDist){
+					thisRoom = i;
+					smallestDist = i.getDistanceFromStart();
+				}
+			}
+
+			int index = pending.indexOf(thisRoom);
+			pending.remove(index);
+
+			thisRoom.setDidCheck(true);
+
+			ArrayList<ClassRoom> children = thisRoom.getNextToList();
+			HashMap<ClassRoom, Integer> nextToDist = thisRoom.getNextTo();
+
+			for(ClassRoom room : children){
+				if (!room.getDidCheck()){
+
+					if (nextTßoDist.get(room) + thisRoom.getDistanceFromStart < room.getDistanceFromStart();)
+
+				}
+			}
+
+
+
+
+		}
+
+
+		// while(true){
+
+		// 	Set<ClassRoom> keys = .getNextTo().keySet();
+		// 	ClassRoom[] array = keys.toArray(new ClassRoom[keys.size()]);
+			
+		// 	for(int i = 0; i < array.length; i++){
+		// 		if (!array[i].getDidCheck()) {
+		// 			array[i].setDistanceToStart(start.getNextTo().get(array[i]));
+		// 			array[i].setdidCheck(true);
+		// 		}
+		// 	}
+
+		// }
+// 		TO BE CHANGED (just herefor compiling erros and stuff)
+		return new Path();
 
 	}
 
@@ -102,9 +163,11 @@ public class Main{
 			if (l != startNode){
 				l.setDistanceToStart(Integer.MAX_VALUE);
 				l.setFromNode(startNode);
+				l.setDidCheck(false);
 			}else{
 				l.setDistanceToStart(0);
 				l.setFromNode(null);
+				l.setDidCheck(false);
 			}
 		}
 	}
