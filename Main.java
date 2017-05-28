@@ -10,7 +10,6 @@ public class Main{
 		
 		try{
 			sc = new Scanner(new File("data.txt"));
-			createMap();
 		}catch(Exception e){
 			System.out.println("I Failed");
 		}
@@ -29,10 +28,12 @@ public class Main{
 			Boolean isEnd = false;
 
 			while (true){
-				if (sc.nextLine().equals("new")){
+				String nextLine = sc.nextLine();
+				if (nextLine.equals("new")){
 					break;
-				}else if(sc.nextLine().equals("end")){
+				}else if(nextLine.equals("end")){
 					isEnd = true;
+					break;
 				}
 			}
 
@@ -58,13 +59,14 @@ public class Main{
 
 			while(true){
 				String nextLine = newSc.nextLine();
-
-				if (nextLine == "new"){
+				if (nextLine.equals("new")){
 					break;
-				}else if (nextLine == "end"){
+				}else if (nextLine.equals("end")){
 					breakOuter = true;
+					break;
 				}else{
-					distances.put(classRooms.get(nextLine.split(" ")[0]), Integer.parseInt(nextLine.split(" ")[1]));
+					String[] line = nextLine.split(" ");
+					distances.put(classRooms.get(line[0]), Integer.parseInt(line[1]));
 				}
 			}
 			classRooms.get(title).setNextTo(distances);

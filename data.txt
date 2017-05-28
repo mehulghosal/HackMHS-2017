@@ -19,7 +19,7 @@ Cafeteria
 103 4
 HallExit2 1
 Stairs1 4
-new 
+new
 Stairs1
 106 1
 107 1
@@ -69,14 +69,14 @@ new
 112 1
 Bathroom 0
 new
-Main Entrance
+MainEntrance
 113 1
 Bathroom 1
-Main Office 1
+MainOffice 1
 Stairs2 0
 new
-Main Office
-Main Entrance 1
+MainOffice
+MainEntrance 1
 Gym 4
 new
 114
