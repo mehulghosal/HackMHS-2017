@@ -15,6 +15,10 @@ public class Main{
 		}
 		
 		createMap();
+
+		
+
+
 	}
 	
 	public static HashMap<String, ClassRoom> classRooms = new HashMap<String, ClassRoom>();
@@ -77,15 +81,25 @@ public class Main{
 	}
 
 	public static Path findPath(ClassRoom start, ClassRoom finish){
+		resetNodes(start);
 
 
-
-
+		return new Path();
 	}
 
 
 	public static void resetNodes(ClassRoom startNode){
-		ArrayList<ClassRoom> classRoomsList = classRooms.keySet();
+		Object[] classRoomsList = classRooms.values().toArray();
+		for(Object i : classRoomsList){
+			ClassRoom l = (ClassRoom) i;
+			if (l != startNode){
+				l.setDistanceToStart(Integer.MAX_VALUE);
+				l.setFromNode(startNode);
+			}else{
+				l.setDistanceToStart(0);
+				l.setFromNode(null);
+			}
+		}
 	}
 
 
@@ -96,6 +110,10 @@ class Path{
 	private ArrayList<ClassRoom> route = new ArrayList<ClassRoom>();
 	private int distace;
 	private ClassRoom startClass, endClass;
+
+	public Path(){
+
+	}
 
 	public Path(ArrayList<ClassRoom> route, int distance, ClassRoom startClass, ClassRoom endClass){
 
