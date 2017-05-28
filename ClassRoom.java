@@ -1,22 +1,22 @@
-public class ClassRoom extends Tile
-{
+import java.util.*;
+
+public class ClassRoom{
 	
-	protected String name;
+	private String name;
+	private HashMap<ClassRoom, Integer> nextTo;
 	
-	public ClassRoom()
-	{
-		//super();
+	
+	public ClassRoom(String name){
+		this.name = name;
 	}
 	
-	public ClassRoom(int x, int y, String namex)
-	{
-		super(x, y);
-		this.name = namex;
-		isOccupied = true;
+	public void setNextTo(HashMap<ClassRoom, Integer> arr){
+		nextTo = arr;
 	}
 	
-	public String getName()
-	{
+	public HashMap<ClassRoom, Integer> getNextTo(){ return nextTo; }
+	
+	public String getName(){
 		return name;
 	}
 	

@@ -1,4 +1,4 @@
-
+/*
 public class Tile {
 	
 	protected int x; //parallel to millburn ave
@@ -27,3 +27,4 @@ public class Tile {
 	}
 	
 }
+*/

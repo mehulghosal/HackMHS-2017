@@ -1,4 +1,4 @@
-
+/*
 public class Staircase extends Tile {
 	
 	public Staircase(int x, int y){
@@ -9,4 +9,4 @@ public class Staircase extends Tile {
 	}
 	
 	
-}
+}*/
