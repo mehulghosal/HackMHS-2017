@@ -82,9 +82,16 @@ public class Main{
 
 	public static Path findPath(ClassRoom start, ClassRoom finish){
 		resetNodes(start);
+		Set<ClassRoom> keys = start.getNextTo().keySet();
+		ClassRoom[] array = keys.toArray(new ClassRoom[keys.size()]);
+		
+		for(int i = 0; i < array.length; i++){
+			if (!array[i].getDidCheck()) {
+				array[i].setDistanceToStart(start.getNextTo().get(array[i]));
+				array[i].setdidCheck(true);
+			}
+		}
 
-
-		return new Path();
 	}
 
 
