@@ -98,6 +98,8 @@ public class Main{
 
 		for (ClassRoom i : nextToArrStart){
 			i.setDistanceToStart(start.getNextTo().get(i));
+			i.setFromNode(start);
+			System.out.println("thisRoom: " + start.getName() + "\tTo Room: " + i.getName()); // + "\tFrom Room: " + room.getFromName());
 			pending.add(i);
 		}
 
@@ -117,14 +119,23 @@ public class Main{
 
 			thisRoom.setDidCheck(true);
 
+
+
 			ArrayList<ClassRoom> children = thisRoom.getNextToList();
 			HashMap<ClassRoom, Integer> nextToDist = thisRoom.getNextTo();
 
-
+			System.out.println("node: " + thisRoom.getName());
+			for (ClassRoom ugh : children){
+				System.out.println(ugh.getName());
 			boolean shouldEnd = true;
+			System.out.println("\n");
+			}
 
 			for(ClassRoom room : children){
-				if (!room.getDidCheck()){
+				// System.out.println("room status " + room.getName() + "\tStsus " + room.getDidCheck());
+				// System.out.println()
+
+				// if (!room.getDidCheck()){
 
 					shouldEnd = false;
 
@@ -134,16 +145,18 @@ public class Main{
 
 					if (nextToDist.get(room) + thisRoom.getDistanceFromStart() < room.getDistanceFromStart()){
 						room.setFromNode(thisRoom);
+						// System.out.println("thisRoom: " + thisRoom.getName() + "\tTo Room: " + room.getName()); // + "\tFrom Room: " + room.getFromName());
 						room.setDistanceToStart(nextToDist.get(room) + thisRoom.getDistanceFromStart());
 					}
 
-				}
+				// }
 			}
 
 			if (shouldEnd){
 				System.out.println(finish.getFrom().getName());
 				break;
 			}
+			System.out.println("\n");
 		}
 // 		TO BE CHANGED (just herefor compiling erros and stuff)
 		return findPath2(start, finish);
