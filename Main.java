@@ -80,10 +80,6 @@ public class Main{
 				}
 			}
 
-			for (ClassRoom i : classrooms){
-				// System.out.println(i);
-			}
-
 			classRooms.get(title).setNextToList(classrooms);
 			classRooms.get(title).setNextTo(distances);
 			if(breakOuter) break;
@@ -106,10 +102,11 @@ public class Main{
 		}
 
 		while(true){
-			ClassRoom thisRoom;
+			ClassRoom thisRoom = new ClassRoom();
 			int smallestDist = Integer.MAX_VALUE;
 			for(ClassRoom i : pending){
 				if (i.getDistanceFromStart() < smallestDist){
+					// System.out.println("worked");
 					thisRoom = i;
 					smallestDist = i.getDistanceFromStart();
 				}
@@ -123,36 +120,54 @@ public class Main{
 			ArrayList<ClassRoom> children = thisRoom.getNextToList();
 			HashMap<ClassRoom, Integer> nextToDist = thisRoom.getNextTo();
 
+
+			boolean shouldEnd = true;
+
 			for(ClassRoom room : children){
 				if (!room.getDidCheck()){
 
-					if (nextTßoDist.get(room) + thisRoom.getDistanceFromStart < room.getDistanceFromStart();)
+					shouldEnd = false;
+
+					if(pending.indexOf(room) == -1){
+						pending.add(room);
+					}
+
+					if (nextToDist.get(room) + thisRoom.getDistanceFromStart() < room.getDistanceFromStart()){
+						room.setFromNode(thisRoom);
+						room.setDistanceToStart(nextToDist.get(room) + thisRoom.getDistanceFromStart());
+					}
 
 				}
 			}
 
+			if (shouldEnd){
+				System.out.println(finish.getFrom().getName());
+				break;
+			}
+		}
+// 		TO BE CHANGED (just herefor compiling erros and stuff)
+		return findPath2(start, finish);
+
+	}
 
 
+	public static Path findPath2(ClassRoom start, ClassRoom finish){
+		ArrayList<ClassRoom> route = new ArrayList<ClassRoom>();
+		ClassRoom current = finish;
 
+		while(true){
+			route.add(current);
+			System.out.println(current.getName());
+			ClassRoom prev = current.getFrom();
+			if (prev == null){
+				break;
+			}
+			current = prev;
 		}
 
+		Path finalPath = new Path(route, start, finish);
 
-		// while(true){
-
-		// 	Set<ClassRoom> keys = .getNextTo().keySet();
-		// 	ClassRoom[] array = keys.toArray(new ClassRoom[keys.size()]);
-			
-		// 	for(int i = 0; i < array.length; i++){
-		// 		if (!array[i].getDidCheck()) {
-		// 			array[i].setDistanceToStart(start.getNextTo().get(array[i]));
-		// 			array[i].setdidCheck(true);
-		// 		}
-		// 	}
-
-		// }
-// 		TO BE CHANGED (just herefor compiling erros and stuff)
-		return new Path();
-
+		return finalPath;
 	}
 
 
@@ -178,17 +193,17 @@ public class Main{
 class Path{
 
 	private ArrayList<ClassRoom> route = new ArrayList<ClassRoom>();
-	private int distace;
+	// private int distace;
 	private ClassRoom startClass, endClass;
 
-	public Path(){
-
+	public Path(ArrayList<ClassRoom> route, ClassRoom startClass, ClassRoom endClass){
+		this.route = route;
+		this.startClass = startClass;
+		this.endClass = endClass;
 	}
 
-	public Path(ArrayList<ClassRoom> route, int distance, ClassRoom startClass, ClassRoom endClass){
-
-	}
-
-
+	public ArrayList<ClassRoom> getRoute(){ return this.route; }
+	public ClassRoom getStart(){ return startClass; }
+	public ClassRoom getEnd(){ return endClass; }
 
 }

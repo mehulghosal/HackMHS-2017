@@ -16,6 +16,10 @@ public class ClassRoom{
 		distanceToStart = 0;
 	}
 
+	public ClassRoom(){
+		
+	}
+
 	public void resetAlgorithm(){
 		distanceToStart = Integer.MAX_VALUE;
 		fromNode = null;
