@@ -1,12 +1,24 @@
-public class ClassRoom extends Tile{
+public class ClassRoom extends Tile
+{
 	
-	protected int classNumber;
+	protected String name;
 	
-	public ClassRoom(int classNumber){
-		this.classNumber = classNumber;
+	public ClassRoom()
+	{
+		//super();
+	}
+	
+	public ClassRoom(int x, int y, String namex)
+	{
+		super(x, y);
+		this.name = namex;
 		isOccupied = true;
 	}
 	
+	public String getName()
+	{
+		return name;
+	}
 	
 	
 }

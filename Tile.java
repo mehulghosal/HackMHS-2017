@@ -6,8 +6,24 @@ public class Tile {
 	protected boolean isOccupied; //if false, it is a hallway, else it is a room or 
 	
 	public Tile(){
-		isOccupied = false;
+		x = 0; y = 0;
 	}
 	
+	public Tile(int x, int y){
+		isOccupied = false;
+		this.x = x;  this.y = y;
+	}
+	
+	public int getX(){
+		return x;
+	}
+	
+	public int getY(){
+		return y;
+	}
+	
+	public boolean getIsOccupied(){
+		return isOccupied;
+	}
 	
 }
