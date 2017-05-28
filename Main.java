@@ -75,4 +75,28 @@ public class Main{
 		}
 		
 	}
+
+	public static Path findPath(ClassRoom start, ClassRoom finish){
+
+
+
+
+	}
+
+
+
+}
+
+class Path{
+
+	private ArrayList<ClassRoom> route = new ArrayList<ClassRoom>();
+	private int distace;
+	private ClassRoom startClass, endClass;
+
+	public Path(ArrayList<ClassRoom> route, int distance, ClassRoom startClass, ClassRoom endClass){
+		
+	}
+
+
+
 }
