@@ -1,7 +1,6 @@
 CLASSES = \
 	Main.java \
-	ClassRoom.java \
-	Algorithm.java \
+	ClassRoom.java
 	
 
 all:

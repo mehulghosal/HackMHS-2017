@@ -84,6 +84,10 @@ public class Main{
 	}
 
 
+	public static void resetNodes(ClassRoom startNode){
+		ArrayList<ClassRoom> classRoomsList = classRooms.keySet();
+	}
+
 
 }
 
@@ -94,7 +98,7 @@ class Path{
 	private ClassRoom startClass, endClass;
 
 	public Path(ArrayList<ClassRoom> route, int distance, ClassRoom startClass, ClassRoom endClass){
-		
+
 	}
 
 
