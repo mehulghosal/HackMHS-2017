@@ -3,6 +3,21 @@ import java.util.*;
 public class ClassRoom{
 	
 	private String name;
+	//dont need floor bc it exits in the hallway
+	//private int floor;
+	private int hallway;
+
+	public ClassRoom(String n, int h){
+		this.name = n;
+		//this.floor = f; 
+		this.hallway = h;
+	}
+
+	public String getName(){return name;}
+	//public int getFloor(){return floor;}
+	public int getHall(){return hallway;}
+
+	/*
 	private int distanceToStart;
 	private ClassRoom fromNode;
 	private boolean didCheck;
@@ -40,6 +55,7 @@ public class ClassRoom{
 	public ArrayList<ClassRoom> getNextToList(){ return this.nextToList; }
 	public HashMap<ClassRoom, Integer> getNextTo(){ return nextTo; }
 	public String getName(){ return name; }
+	*/
 	
 	
 }
