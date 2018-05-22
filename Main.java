@@ -17,7 +17,10 @@ public class Main{
 		createMap();
 
 		
-		findPath(classRooms.get("109"), classRooms.get("139"));
+		List<ClassRoom> route = findPath(classRooms.get("109"), classRooms.get("139")).getRoute();
+		for(int i = 0; i < route.size(); i++){
+			System.out.println(route.get(i).getName());
+		}
 
 	}
 	
@@ -75,7 +78,7 @@ public class Main{
 					distances.put(classRooms.get(line[0]), Integer.parseInt(line[1]));
 					classrooms.add(classRooms.get(line[0]));
 					if (classRooms.get(line[0]) == null){
-						System.out.println(line[0]);
+						//System.out.println(line[0]);
 					}
 				}
 			}
@@ -99,7 +102,7 @@ public class Main{
 		for (ClassRoom i : nextToArrStart){
 			i.setDistanceToStart(start.getNextTo().get(i));
 			i.setFromNode(start);
-			System.out.println("thisRoom: " + start.getName() + "\tTo Room: " + i.getName()); // + "\tFrom Room: " + room.getFromName());
+			//System.out.println("thisRoom: " + start.getName() + "\tTo Room: " + i.getName()); // + "\tFrom Room: " + room.getFromName());
 			pending.add(i);
 		}
 
@@ -123,12 +126,13 @@ public class Main{
 
 			ArrayList<ClassRoom> children = thisRoom.getNextToList();
 			HashMap<ClassRoom, Integer> nextToDist = thisRoom.getNextTo();
-
-			System.out.println("node: " + thisRoom.getName());
-			for (ClassRoom ugh : children){
-				System.out.println(ugh.getName());
 			boolean shouldEnd = true;
-			System.out.println("\n");
+
+			//System.out.println("node: " + thisRoom.getName());
+			for (ClassRoom ugh : children){
+			//	System.out.println(ugh.getName());
+			shouldEnd = false;
+			//System.out.println("\n");
 			}
 
 			for(ClassRoom room : children){
@@ -137,7 +141,7 @@ public class Main{
 
 				// if (!room.getDidCheck()){
 
-					shouldEnd = false;
+				shouldEnd = true;
 
 					if(pending.indexOf(room) == -1){
 						pending.add(room);
@@ -153,10 +157,10 @@ public class Main{
 			}
 
 			if (shouldEnd){
-				System.out.println(finish.getFrom().getName());
+		//		System.out.println(finish.getFrom().getName());
 				break;
 			}
-			System.out.println("\n");
+		//	System.out.println("\n");
 		}
 // 		TO BE CHANGED (just herefor compiling erros and stuff)
 		return findPath2(start, finish);
@@ -170,7 +174,7 @@ public class Main{
 
 		while(true){
 			route.add(current);
-			System.out.println(current.getName());
+		//	// System.out.println(current.getName());
 			ClassRoom prev = current.getFrom();
 			if (prev == null){
 				break;
