@@ -1,372 +1,64 @@
 100
-101 1
-102 1
-new
 101
-100 1
-102 1
-new
 102
-103 1
-100 1
-101 1
-new
 103
-102 1
-Cafeteria 4
-new
 Cafeteria
-103 4
-HallExit2 1
-Stairs1 4
-new
 Stairs1
-106 1
-107 1
-Cafeteria 4
-new
 106
-107 0
-HallExit2 1
-Stairs1 1
-108 1
-new
 108
-106 1
-107 0
-109 1
-110 1
-new
 107
-106 1
-108 1
-109 1
-110 1
-new
 109
-110 0
-107 1
-108 1
-112 1
-111 1
-new
 110
-109 0
-108 1
-107 1
-111 1
-112 1
-new
 111
-112 0
-110 1
-109 1
-113 1
-Bathroom 1
-new
 112
-111 0
-113 1
-110 1
-109 1 
-new
 Bathroom
-113 1
-112 1
-114 1
-116 1
-new
 113
-111 1
-112 1
-Bathroom 0
-new
 MainEntrance
-113 1
-Bathroom 1
-MainOffice 1
-Stairs2 0
-new
 Stairs2
-113 1
-Bathroom 1
-MainEntrance 1
-MainOffice 1
-new
 MainOffice
-MainEntrance 1
-Gym 4
-new
-Gym
-MainOffice 4
-new
 114
-116 1
-117 1
-118 1
-new
 116
-114 1
-117 1
-118 1
-new
 117
-118 1
-116 1
-114 1
-new
 118
-117 1
-119 1
-116 1
-114 1
-120 1
-new
 119
-117 1
-118 1
-120 1
-121 1
-new
 120
-118 1
-119 1
-121 1
-Stairs3 1
-new
 121
-119 1
-120 1
-Stairs3 1
-122 1
-123 1
-new
 Stairs3
-120 1
-121 1
-122 1
-new
 122
-Stairs3 1
-121 1
-123 1
-124 1
-new
 124
-121 1
-123 1
-125 1
-126 1
-new
 123
-122 1
-124 1
-125 1
-126 1
-new
 125
-123 1
-124 1
-126 1
-130 1
-Bathroom2 1
-new
 126
-125 1
-124 1
-123 1
-Bathroom2 1
-130 1
-new
 Bathroom2
-128 1
-127 1
-129 1
-130 1
-Stairs4 1
-new
 128
-Stairs4 1
-127 1
-Bathroom2 1
-129 1
-new
 Stairs4
-128 1
-127 1
-Bathroom2 1
-new
 127
-Stairs4 1
-128 1
-Bathroom2 1
-129 1
-new
 129
-127 1
-130 1
-Bathroom2 1
-new
 130
-129 1
-Bathroom2 1
-132 1
-131 1
-new
 131
-129 1
-130 1
-132 1
-133 1
-134 1
-new
 132
-130 1
-129 1
-133 1
-134 1
-new
 133
-131 1
-132 1
-134 1
-136 1
-135 1
-new
 134
-132 1
-131 1
-133 1
-135 1
-136 1
-new
 135
-133 1
-134 1
-136 1
-137 1
-138 1
-new
 136
-135 1
-133 1
-134 1
-137 1
-138 1
-new
 137
-138 1
-136 1
-135 1
-Stairs5 1
-new
 138
-Stairs5 1
-137 1
-136 1
-135 1
-139 4
-new
 Stairs5
-Bathroom3 1
-137 1
-138 1
-139 5
-new
-Bathroom3
-Stairs5 1
-Stairs6 1
-171 1
-new
 Stairs6
-Bathroom3 1
-171 1
-new
-171
-Stairs6 1
-172 1
-173 1
-new
 172
-171 1
-173 1
-174 1
-173a 1
-new
 173
-171 1
-172 1
-173a 1
-174 1
-new
 173a
-173 1
-174 1
-176 1
-175 1
-new
 174
-172 1
-173a 1
-175 1
-new
 176
-174 1
-173a 1
-175 1
-Stairs7 1
-new
 175
-173a 1
-176 1
-Stairs7 1
-174 1
-new
 Stairs7
-175 1
-173a 1
-176 1
-new
 139
-HallExit1 1
-138 4
-Stairs5 5
-Bathroom4 1
-140 1
-new
 Bathroom4
-139 1
-140 1
-new
 140
-139 1
-141 1
-142 1
-new
 141
-140 1
-142 1
-143 1
-new
 142
-141 1
-143 1
-140 1
-new
 143
-141 1
-142 1
-new
 HallExit1
-Library 6
-139 1
-new
 HallExit2
-Library 6
-106 1
-Cafeteria 1
-new
 Library
-HallExit1 6
-HallExit2 6
 end

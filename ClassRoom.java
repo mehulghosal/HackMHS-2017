@@ -1,4 +1,5 @@
 import java.util.*;
+import java.io.*;
 
 public class ClassRoom{
 	
@@ -15,47 +16,18 @@ public class ClassRoom{
 
 	public String getName(){return name;}
 	//public int getFloor(){return floor;}
-	public int getHall(){return hallway;}
-
-	/*
-	private int distanceToStart;
-	private ClassRoom fromNode;
-	private boolean didCheck;
-	private HashMap<ClassRoom, Integer> nextTo;
-	private ArrayList<ClassRoom> nextToList;
+	public int getHall(){return hallway;}	
 	
+}
 
-	
-	public ClassRoom(String name){
-		this.name = name;
-		distanceToStart = 0;
+class HallEnd extends ClassRoom{
+
+	private int hall2;
+	public HallEnd(String n, int h, int h2){
+		super(n, h);
+		this.hall2 = h2;
 	}
 
-	public ClassRoom(){
-		
-	}
+	public int gethall2(){return hall2;}
 
-	public void resetAlgorithm(){
-		distanceToStart = Integer.MAX_VALUE;
-		fromNode = null;
-	}
-
-	
-	public void setNextTo(HashMap<ClassRoom, Integer> arr){ nextTo = arr; }
-	public void setNextToList(ArrayList<ClassRoom> list){ this.nextToList = list; }
-	public void setDistanceToStart(int dist){ this.distanceToStart = dist;}
-	public void setFromNode(ClassRoom from){ this.fromNode = from; }
-	public void setDidCheck(boolean check){ this.didCheck = check; }
-
-	public boolean getDidCheck(){ return this.didCheck; }
-	public String getFromName(){ return fromNode.getName(); }
-	public ClassRoom getFrom(){ return fromNode; }
-	public int getDistanceFromStart(){ return distanceToStart; }
-
-	public ArrayList<ClassRoom> getNextToList(){ return this.nextToList; }
-	public HashMap<ClassRoom, Integer> getNextTo(){ return nextTo; }
-	public String getName(){ return name; }
-	*/
-	
-	
 }
