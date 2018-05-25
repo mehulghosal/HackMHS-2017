@@ -17,14 +17,26 @@ public class ClassRoom{
 		this.floor = f;
 	}
 
-	//copies the info from toCopy --> this
+	//copies the info from toCopy --> c
 	//also, modifies the name to fit the floor
-	public void copy(ClassRoom toCopy){
+	public static ClassRoom copy(ClassRoom c, ClassRoom toCopy){
+		String n = toCopy.getName();
 		try{
-			this.name = (Integer.parseInt(toCopy.getName()) + this.floor*100) + "";
+			c.name = (Integer.parseInt(n) + c.floor*100) + "";
 		}
-		catch(java.lang.NumberFormatException e){}
-		this.hallway = toCopy.getHall();
+		catch(java.lang.NumberFormatException e){
+			if(n.equals("MainGym")){//maingym --> guidance
+				c.name = "GuidanceOffice";
+			}
+			else if(n.indexOf("Bathroom")!=-1){//its a bathroom
+				c.name = n;
+			}
+			else if(n.indexOf("Stairs")!=-1){//its a staircase
+				c.name = n;
+			}
+		}
+		c.hallway = toCopy.getHall();
+		return c;
 	}
 
 	public String	getName (){return name;}

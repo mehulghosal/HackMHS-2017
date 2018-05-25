@@ -46,12 +46,29 @@ public class NMain{
 	}
 
 	public static void createMap(){
+
+		//sets up first floor
 		Floor first  = new Floor(1);
-		ArrayList firstFloorHalls = read();
+		ArrayList<Hallway> firstFloorHalls = read();
 		first.setFloor(firstFloorHalls);
 		System.out.println(first);
+
+		//second floor classroom have wonky numbers - dont allign correctly
+		//doesn't have outdoorexits or library: exclude hallway 2
+		//doesn't have gyms/nurse/mainoffice :  exclude hallway 5 and 6
+		//maingym --> guidance office
 		Floor second = new Floor(2);
+		//third floor is only hallway number 11
 		Floor third  = new Floor(3);
+		Hallway thirdFloorHall = new Hallway(11,3);
+		third.add(thirdFloorHall);
+		ArrayList<ClassRoom> toCopy = firstFloorHalls.get(11).getHall();
+		for(ClassRoom c: toCopy){
+			thirdFloorHall.add(ClassRoom.copy(new ClassRoom(3), c));
+		}
+		System.out.println(thirdFloorHall);
+
+
 	}
 
 }
