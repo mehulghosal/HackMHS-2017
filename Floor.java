@@ -19,15 +19,30 @@ public class Floor{
 	public int 					getID	(){return identity;}
 	public String 				toString(){
 		String s = "";
-		for(Hallway h: floor){s+=h.toString();}
+		for(Hallway h: floor){s+=h.toString() + "\n";}
 		return s;
 	}
+	public Hallway				getHall(int i){
+		for(Hallway h: floor){
+			if(h.getID()==i){return h;}
+		}
+		return null;
+	}
 
-	public void setFloor(ArrayList<Hallway> f){
+	public void 				setFloor(ArrayList<Hallway> f){
 		this.floor = f;
 	}
 	public void 				add		(Hallway h){
 		floor.add(h);
+	}
+
+	public boolean 				contains(ClassRoom cl){
+		for(Hallway h: floor){
+			for(ClassRoom c: h.getHall()){
+				if(c.getName().equals(cl.getName())){return true;}
+			}
+		}
+		return false;
 	}
 
 }

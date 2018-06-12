@@ -42,20 +42,30 @@ public class Hallway{
 		return null;
 	}
 
-	public ArrayList<ClassRoom> getHall (){return hall ;}
+	public ArrayList<ClassRoom> getHall (){return hall;}
 	public int 					getID 	(){return identity;}
 	public int 					getFloor(){return floor;}
 	public HallEnd	 			getStart(){return start;}
 	public HallEnd	 			getEnd  (){return end;}
-	public ClassRoom 			get 	(int i){return hall.get(i);}
+	public ClassRoom 			getClass(int i){
+		for(ClassRoom c: hall){
+			if(c.getID() == i){return c;}
+		}
+		return null;
+	}
+	public int 					getLen	(){return hall.size();}
 	public String 				toString(){
 		String s = "";
 		for(ClassRoom c: hall){s+=c.toString();}
 		return s;
 	}
+	public boolean 				contains(ClassRoom c){return hall.contains(c);}
 
 	public void 				add		(ClassRoom c){
 		hall.add(c);
+	}
+	public void 				setClass(int i, ClassRoom c){
+		hall.set(i, c);
 	}
 	public void 				setFloor(int f){
 		this.floor = f;
