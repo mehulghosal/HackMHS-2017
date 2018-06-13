@@ -102,12 +102,11 @@ public class NMain{
 				ArrayList<Hallway> halls = subList(fromFloor.getFloor(), fh, th);
 				System.out.println(halls);
 				Hallway current = fromHall;
-				System.out.println(halls);
 
 				while(true){
-					
+					if(true){break;}
 				}
-				
+			}
 		}
 		//different floors
 		else {
